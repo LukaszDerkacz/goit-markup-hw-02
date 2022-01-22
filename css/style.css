@@ -24,7 +24,12 @@
     margin: 0;
     padding: 0;
   }
-  
+
+  .container{
+    width: 1200px;
+    margin: 0 auto;
+  }
+
 body {
     color: var(--primary-color);
     font-family: var(--font-family-primary);
@@ -80,12 +85,17 @@ a{
  /* =========== main =========== */
 
 .main-title {
+  display: flex;
   background: var(--dark-color);
 }
 
 .main-title-content h1 {
   color: var(--white-color);
+  font-size: 44px;
   font-weight: var(--font-weight-extra-bold);
+  line-height: 60px 116%;
+  text-align: center;
+  letter-spacing: 6%;
 }
 
 .main-title-button {
