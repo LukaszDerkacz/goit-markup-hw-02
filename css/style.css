@@ -5,6 +5,7 @@
 
   --font-size-14px: 14px;
   --font-size-16px: 16px;
+  --font-size-18px: 18px;
   --font-size-26px: 26px;
   --font-size-36px: 36px;
   --font-size-44px: 44px;
@@ -19,6 +20,7 @@
   --dark-color: #2f303a;
   --light-color: #F5F4FA;
   --white-color: #ffffff;
+  --border-portfolio: #EEEEEE;
   
   --spacing-percent-3: 0.03em;
   --spacing-percent-6: 0.06em;
@@ -49,11 +51,6 @@ body {
   margin: 0 auto;
 }
 
-/* .padding-txt{
-  padding-top: 94px;
-  padding-bottom: 94px;
-} */
-
 h2 {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-36px);
@@ -83,7 +80,6 @@ p{
   }
 
   .header-nav-content{
-    border-bottom: 1px solid #ececec;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -226,8 +222,7 @@ p{
   .task-description {
     text-align: center;
     background-color: var(--white-color);
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding: 94px 0px 94px;
   }
 
   .task-description-content{
@@ -240,9 +235,7 @@ p{
 
   .team{
     background-color: var(--light-color);
-    text-align: center;
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding: 94px 0px 94px;
   }
 
   .team-content{
@@ -251,6 +244,15 @@ p{
     justify-content: center;
     align-items: center;
   }
+  
+  .team-content-item {
+    max-width: 270px;
+    height: auto;
+    overflow: hidden;
+    background: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+  } 
 
   .content-item-link h4 {
     color: var(--primary-color);
@@ -274,99 +276,132 @@ p{
     line-height: 18.75px;
     letter-spacing: var(--spacing-percent-3);
     padding-bottom: 30px;
+    width: 270px;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
     text-align: center;
-
   } 
   
-  .team-content-item {
-    max-width: 380px;
-    height: auto;
-    background: #ffffff;
-    transition: box-shadow 150ms ease-in-out;
-    overflow: hidden;
-    border: 1px solid #eeeeee;
-  } 
-  
-  .team-content-item:hover,
-  .team-content-item:focus {
-    background: #ffffff;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-      0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
-  } 
+  /* =========== portfolio button =========== */
 
-  /* =========== portfolio filtr =========== */
-
-  .portfolio-wide-hige{
-    padding-top: 94px;
+  .portfolio-main{
     padding-bottom: 94px;
   }
 
-  .portfolio-filtr-content{
+  .portfolio-button{
     display: flex;
-    gap: 8px;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding-top: 94px;
     padding-bottom: 50px;
   }
 
-  .portfolio-filtr-content-item--button {
-    font-size: var(--font-size-16px);
-    line-height: 26px;
-    font-weight: normal;
-    letter-spacing: var(--spacing-percent-3);
-    color: var(--primary-color);
-    font-weight: var(--font-weight-normal);
-    border-radius: 4%;
-    border: 0;
-    background-color: var(--light-color);
-    cursor: pointer;
-    padding: 6px 22px;
+  .portfolio-button:not(:last-child){
+    gap: 8px;
   }
 
-  .portfolio-filtr-content-item--button:hover,
-  .portfolio-filtr-content-item--button:focus,
-  .portfolio-filtr-content-item--button:active {
+  .portfolio-button-content{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+  }
+
+  .portfolio-button-item {
+    color: var(--primary-color);
+    font-size: var(--font-size-16px);
+    font-weight: var(--font-weight-normal);
+    line-height: 26px;
+    letter-spacing: var(--spacing-percent-3);
+    border-radius: 4px;
+    border: 0;
+    background-color: var(--light-color);
+    padding: 6px 22px;
+    cursor: pointer;
+  }
+
+  .portfolio-button-item:hover,
+  .portfolio-button-item:focus,
+  .portfolio-button-item:active {
     color: var(--white-color);
     background-color: var(--accent-color);
   }
 
+  /* =========== portfolio main =========== */
 
-/* =========== image pointer =========== */
+  .portfolio-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 
-  /* .illuminated-item {
-    max-width: 380px;
+  .portfolio-content-item{
+    max-width: 370px;
     height: auto;
-    background: #ffffff;
-    transition: box-shadow 150ms ease-in-out;
+    background: var(--white-color);
+    border: 1px solid var(--border-portfolio);
+    transition: box-shadow 250ms ease-in-out;
     overflow: hidden;
-    border: 1px solid #eeeeee;
-  } */
+    cursor: pointer;
+  }
+
+
+  .portfolio-item-link h4 {
+    color: var(--color-primary);
+    font-size: var(--font-size-18px);
+    line-height: 36px;
+    font-weight: var(--font-bold);
+    font-family: var(--font-primary);
+    letter-spacing: var(--spacing-percent-6);
+    padding-top: 20px;
+    padding-bottom: 4px;
+    padding-left: 24px;
+  }
   
-  /* .illuminated-item:hover,
-  .illuminated-item:focus {
-    background: #ffffff;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-      0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
-  } */
-  
+  .portfolio-item-link p {
+    color: var(--color-secondary);
+    font-size: var(--font-16);
+    line-height: 30px;
+    font-weight: var(--font-normal);
+    letter-spacing: var(--spacing-percent-3);
+    padding-bottom: 20px;
+    padding-left: 24px;
+  }
+
   
   /* =========== footer =========== */
 
   .footer-body {
+    display: flex;
     background-color: var(--dark-color);
+    padding: 60px 0px 60px;
   }
 
   .footer-body-logo {
     color: var(--white-color);
+    font-size: var(--font-size-26px);
     font-family: var(--font-family-raleway);
     font-weight: var(--font-weight-bold);
+    line-height: 30.52px;
+    letter-spacing: var(--spacing-percent-3);
   }
- 
+
+  address {
+    margin-top: 20px;
+  }
+
+  .footer-body-contact-link:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
   .footer-body-contact-link {
     color: var(--white-color);
+    font-size: var(--font-size-14px);
+    font-family: var(--font-family-primary);
     font-weight: var(--font-weight-normal);
+    line-height: 24px;
+    letter-spacing: var(--spacing-percent-3);
   }
   
   .footer-body-contact-link a {
@@ -378,4 +413,5 @@ p{
   .footer-body-contact-link a:hover,
   .footer-body-contact-link a:focus {
     color: var(--accent-color);
+    opacity: 1;
   }
