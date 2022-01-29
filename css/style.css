@@ -149,7 +149,8 @@ p{
     background: var(--dark-color);
     /* position: relative;  */
     height: 600px; 
-    align-items: center;
+    margin: 0 auto;
+    /* align-items: center; */
     text-align: center; 
   }
 /* 
